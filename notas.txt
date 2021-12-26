@@ -1,0 +1,23 @@
+* Para seleccionar la terminal con el entorno activado, primero se inicia el entorno en una terminal externa luego en vsc presionar F1 y ponemos python:select_interprete y seleccionamos el que tenga el entorno luego nuevamente en F1 python:create terminal para abrir la terminal en vsc
+
+* Iniciar proyecto (para que cree los archivos directamente en la carpeta y no cree ootra carpeta adicional antes, se pone el espacio punto al final):
+django-admin startproject django_portfolio .     
+
+* Ejecutar proyecto (la primera vez crea la bd sqlite3):
+python manage.py runserver
+
+* Crear app:
+python manage.py startapp blog
+
+* Agregar las apps al settings.py 
+
+* Libreria Black se utiliza para formatear el codigo
+
+* Para utilizar ImageField es necesario instalar libreria pillow
+
+* despues de crear el modelo debo realizar un:
+python manage.py makemigrations
+python manage.py migrate
+
+* Crear un administrador (ingreso el comando y completo los campos):
+python manage.py createsuperuser
