@@ -1,11 +1,52 @@
-<h1>HOME</h1>
+{% extends 'layout.html' %}
 
-{% for project in projects %}
-    <h2>{{ project.titulo }}</h2>
-    <p>{{ poject.descripcion}}</p>
-    <img src="{{ project.imagen.url }}" alt="{{ project.titulo }}">
+{% block content %}
 
-    {% if project.url %}
-        <a href="{{ project.url }}">{{ project.url }}</a>
-    {% endif %}
-{% endfor %}
+{% load static %}
+
+<header class="row bg-black">
+    
+    <div class="col-md-4">
+        <img src="{% static 'portfolio/profile.jpeg' %}" class="img-fluid rounded">
+    </div>
+
+    <div class="col-md-8 my-auto p4">
+        <h1>I am <strong>Pablo Bustos</strong></h1>
+        <h3>Python Full Stack Developer</h3>        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit in nihil quo! Laborum obcaecati consequatur distinctio porro. Illo atque illum eos. Deserunt tempore dolores repudiandae doloribus iusto maiores sunt omnis!</p>
+    </div>
+    
+</header>
+
+<div class="row my-4 text-center">
+    <h3>My Projects</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt inventore facilis saepe asperiores maiores iure ut natus id quas ad, eos nulla accusantium ullam voluptate consectetur doloribus molestiae fugit eligendi.</p>
+
+    {% for project in projects %}
+
+    <div class="col-md-4 p-4">
+        <div class="card bg-black card-project">
+            <img src="{{ project.imagen.url }}" alt="{{ project.titulo }}" class="card-img-top">
+            <div class="card-body">
+                <h2>{{ project.titulo }}</h2>
+                <p>{{ poject.descripcion}}</p>
+                                
+                {% if project.url %}
+                    <a href="{{ project.url }}" target="_blank">{{ project.url }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>           
+    
+    {% endfor %}
+
+
+
+
+
+
+</div>
+
+
+
+{% endblock %}
